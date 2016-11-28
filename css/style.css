@@ -1,0 +1,70 @@
+/*
+All images used belong to:
+Markus Spiske - https://500px.com/markusspiske
+Yinan Chen - https://500px.com/webmaster85 
+Fahim Akhter - https://500px.com/fahimakhter
+*/
+
+/* -- Small Size - one column -- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin: 1rem;
+}
+.container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.container ul li {
+    margin: 0 0 1rem 0;
+}
+.container ul picture img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+}
+
+/* -- Medium Size - two column -- */
+@media screen and (min-width: 600px) and (max-width: 1200px){ 
+    .container ul::after {
+        content: "";
+        display: block;
+        clear: left;
+    } 
+    .container ul li {
+        width: calc(50% - 0.5rem);
+        float: left;
+        margin: 0 1rem 1rem 0;
+    }
+    .container ul li:nth-child(2n) {
+        margin: 0 0 1rem 0;
+    }
+}
+
+/* -- Large Size - 4 column -- */
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 75%;
+        margin: auto
+    } 
+    .container ul:after {
+        content: "";
+        display: block;
+        clear: left;
+    }  
+    .container ul li {
+        width: calc(25% - 0.75rem);
+        float: left;
+        margin: 0 1rem 1rem 0;
+    }   
+    .container ul li:nth-child(4n) {
+        margin: 0 0 1rem 0;
+    }
+}
